@@ -1,0 +1,77 @@
+{% extends "global/index.html" %}
+
+{% block main %}
+<div class="row">
+    <form action="{{ BASE }}user/login" method="POST" class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3" onsubmit="return validateForm();">
+        <div class="card">
+            <div class="card-header">
+                Ulogujte se na Sellout
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="input_username">Korisničko ime:</label>
+                    <input type="text" id="input_username" name="login_username" required class="form-control"
+                    placeholder="Unesite korisničko ime.">
+                </div>
+                <div class="form-group">
+                    <label for="input_password">Lozinka:</label>
+                    <input type="password" id="input_password" name="login_password" required class="form-control"
+                    placeholder="Unesite lozinku.">
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">
+                    Prijava
+                </button>
+            </div>
+        </div>
+        <div class="alert alert-warning d-none" id="error-message"></div>
+    </form>
+</div>
+<div class="d">
+<p></p>
+</div>
+<div class="row">
+    <form action="{{ BASE }}user/register" method="GET" class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <center><b>Još uvek nemate nalog na Sellout?</b></center>
+                </div>
+                <br>
+                <div class="container align-items-center">
+                    <center>
+                    <button type="submit" class="btn btn-primary">
+                        Registracija
+                    </button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    function validateForm() {
+        let status = true;
+
+        document.querySelector('#error-message').classList.add('d-none');
+        document.querySelector('#error-message').innerHTML = '';
+
+        const title = document.querySelector('#login_username').value;
+        if (!title.match(/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/)) {
+            document.querySelector('#error-message').innerHTML += 'Username nije validan<br>';
+            document.querySelector('#error-message').classList.remove('d-none');
+            status = false;
+        }
+
+        const description = document.querySelector('#login_password').value;
+        if (!description.match(/.*[^\s]{15,}.*/)) {
+            document.querySelector('#error-message').innerHTML += 'Lozinka nije validna!<br>';
+            document.querySelector('#error-message').classList.remove('d-none');
+            status = false;
+        }
+
+        return status;
+    }
+</script>
+{% endblock %}

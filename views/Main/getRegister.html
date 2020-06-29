@@ -1,0 +1,63 @@
+{% extends "global/index.html" %}
+
+{% block main %}
+<div class="row">
+    <form action="{{ BASE }}user/register" method="POST" class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+        <div class="card">
+            <div class="card-header">
+                Registracija na Sellout
+            </div>
+
+             <div class="card-body">
+                <div class="form-group">
+                    <label for="input_email">E-mail:</label>
+                    <input type="email" id="input_email" name="reg_email" required class="form-control"
+                    placeholder="Unesite svoju adresu e-pošte u ovo polje."> 
+                </div>
+
+                <div class="form-group">
+                    <label for="input_forename">Ime:</label>
+                    <input type="text" id="input_forename" name="reg_forename" required class="form-control"
+                    placeholder="Unesite svoje ime.">
+                </div>
+
+                <div class="form-group">
+                    <label for="input_surname">Prezime:</label>
+                    <input type="text" id="input_surname" name="reg_surname" required class="form-control"
+                    placeholder="Unesite svoje prezime.">
+                </div>
+
+                <div class="form-group">
+                    <label for="input_username">Korisničko ime:</label>
+                    <input type="text" id="input_username" name="reg_username" required class="form-control"
+                    placeholder="Unesite željeno korisničko ime.">
+                </div>
+
+                <div class="form-group">
+                    <label for="input_phone">Broj telefona:</label>
+                    <input type="text" id="input_phone" name="reg_phone" required class="form-control"
+                    placeholder="Unesite broj telefona.">
+                </div>
+
+                <div class="form-group">
+                    <label for="input_password_1">Lozinka:</label>
+                    <input type="password" id="input_password_1" name="reg_password_1" required class="form-control"
+                    placeholder="Unesite željenu lozinku.">
+                </div>
+
+                <div class="form-group">
+                    <label for="input_password_2">Ponovite svoju lozinku:</label>
+                    <input type="password" id="input_password_2" name="reg_password_2" required class="form-control"
+                    placeholder="Unesite željenu lozinku još jednom.">
+                </div>
+                
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">
+                    Registraicja
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

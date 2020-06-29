@@ -1,0 +1,31 @@
+{% extends "global/index.html" %}
+
+{% block main %}
+    <ul>
+        {% for ad in ads %}
+        <li class="ad row">
+            <div class="col-12 col-md-2">
+                <a href="{{ BASE }}ad/{{ ad.ad_id }}">
+                    <img src="{{ BASE }}assets/uploads/{{ ad.image_path}}"
+                    alt="Velika slika - {{ ad.ad_id }}" class="width-100-percent">
+                </a>
+            </div>
+            
+            <div class="col-12 col-md-10">
+                <a href="{{ BASE }}ad/{{ ad.ad_id }}">
+                    {{ ad.title|escape}}  
+                </a>
+
+                <div class="row">
+                    <span class="col-6 col-md-4">{{ ad.starts_at|escape }}</span>
+                    <span class="col-6 col-md-4">{{ ad.ends_at|escape }}</span>
+                    <span class="col-12 col-md-4">{{ ad.price|escape }} Din </span>  
+                </div> 
+            </div>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block naslov %}
+Rezultati pretrage
+{% endblock %}

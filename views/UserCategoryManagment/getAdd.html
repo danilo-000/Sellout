@@ -1,0 +1,28 @@
+{% extends "global/index.html" %}
+
+{% block main %}
+    <div class="row">
+        <div class="container col-xl-12 col-lg-12 col-sm-12 col-sm-12">
+            <a href="{{ BASE }}user/categories"><i class="fa fa-list"></i> List all categories</a>
+        </div>
+    </div>
+    <div class="row">
+        <form  method="POST" class=" category-form col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+            <div class="form-group">
+                <label for="name">Ime:</label>
+                <input type="text" id="name" name="name" required class="form-control"
+                placeholder="Unesite kategoriju">
+            </div>
+            <div class="container align-items-center">
+                <center>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Dodaj kategoriju
+                    </button>
+                </center>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+{% block naslov %}
+Dodavanje kategorije
+{% endblock %}

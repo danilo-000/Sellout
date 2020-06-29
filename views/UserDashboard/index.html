@@ -1,0 +1,39 @@
+{% extends "global/index.html" %}
+
+{% block main %}
+<div>
+    <a href="{{ BASE }}user/ads">
+        <i class="fa fa-list"></i> Lista mojih oglasa
+    </a>
+</div>
+<div>
+    <a href="{{ BASE }}user/ads/add/">
+        <i class="fa fa-plus" aria-hidden="true"></i> Dodaj novi oglas
+    </a>
+</div>
+<div>
+    <a href="{{ BASE }}user/">
+        <i class="fa fa-user" aria-hidden="true"></i> Moj nalog
+    </a>
+</div>
+<div>
+    <a href="{{ BASE }}user/">
+        <i class="fa fa-comment" aria-hidden="true"></i> Poruke
+    </a>
+</div>
+<div>
+    <a href="{{ BASE }}user/">
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i> Ocene
+    </a>
+</div>
+<div>
+    <a href="{{ BASE }}user/">
+        <i class="fa fa-star" aria-hidden="true"></i> Pratim
+    </a>
+</div>
+<div>
+    <a href="{{ BASE }}user/">
+        <i class="fa fa-bell" aria-hidden="true"></i> Obaveštenja
+    </a>
+</div>
+{% endblock %}

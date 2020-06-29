@@ -1,0 +1,14 @@
+{% extends "global/index.html" %}
+
+{% block main %}
+<div class="ads">
+    <ul>
+        {% for ad in ads %}
+            <li>
+                <a href="{{ BASE }}user/ads/edit/{{ ad.ad_id }}">
+                    {{ ad.title|escape }}
+                </a>
+        {% endfor %}
+    </ul>
+</div> 
+{% endblock %}

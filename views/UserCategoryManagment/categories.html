@@ -1,0 +1,30 @@
+{% extends "global/index.html" %}
+
+{% block main %}
+<br>
+<div class="row">
+    <div class="container col-xl-4 col-lg-4 col-md-6 col-sm-12">
+        <div class="container">
+            <center>
+            <button type="submit" class="btn btn-primary">
+                    <a href="{{ BASE }}user/categories/add"><font color="white"><i class="fa fa-plus" aria-hidden="true"></i> Dodaj novu kategoriju</font></a>
+                </button>
+            </center>
+        </div>
+        <br/>
+        <div class="list-group categories col-xl-12 col-lg-4 col-md-6 col-sm-12">
+            {% for category in categories %}
+                <button type="button" class="list-group-item list-group-item-action">
+                    <a href="{{ BASE }}user/categories/edit/{{ category.category_id }}">
+                        {{ category.name|escape }}
+                    </a>
+                </button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block naslov %}
+Spisak kategorija
+{% endblock %}
